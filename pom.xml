@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>zachet_admin_oc</artifactId>
+    <artifactId>ZachetAdminka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>zachet_admin_oc</name>
-    <description>zachet_admin_oc</description>
+    <name>zachet_adminka</name>
+    <description>zachet_adminka</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -43,5 +43,15 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
 
 </project>
