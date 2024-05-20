@@ -1,8 +1,7 @@
-package com.example.zachet_admin_oc.controller;
+package com.example.zachet_adminka.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/health")

@@ -1,10 +1,10 @@
-package com.example.zachet_admin_oc;
+package com.example.zachet_adminka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ZachetAdminOcApplicationTests {
+class ZachetAdminkaApplicationTests {
 
     @Test
     void contextLoads() {

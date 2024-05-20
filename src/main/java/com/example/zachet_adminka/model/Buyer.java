@@ -1,12 +1,14 @@
-package com.example.zachet_admin_oc.model;
+package com.example.zachet_adminka.model;
 
-public class User {
+public class Buyer {
     private int id;
     private String name;
+    private int age;
 
-    public User(int id, String name) {
+    public Buyer(int id, String name, int age) {
         this.id = id;
         this.name = name;
+        this.age = age;
     }
 
     public int getId() {
@@ -21,7 +23,11 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String buyer) {
         this.name = name;
     }
+
+    public int getAge() { return age; }
+
+    public void setAge(int age) { this.age = age; }
 }
