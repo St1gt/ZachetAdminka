@@ -1,29 +1,38 @@
+ip addr  Проверка айпи адреса для подключения к вм
+ssh логин@айпишник
 sudo apt update
-sudo apt install -y openjdk-17-jdk maven nginx
-sudo mkdir -p /home/dbukin/app
-cd /home/dbukin/app
-git clone https://github.com/dpbukin/oc_zachet.git
-cd /home/dbukin/app/oc_zachet
+sudo apt install -y openjdk-17-jdk maven nginx  установка джебы, мейвен, нджинк
+sudo mkdir -p /home/rutuser/app
+cd /home/rutuser/app
+ls -ld /home/rutuser/app изменение прав доступа к директории app
+git clone https://github.com/St1gt/ZachetAdminka.git
+cd /home/rutuser/app/ZachetAdminka
 mvn clean package
 sudo mkdir -p /var/www/app
-sudo cp target/zachet_admin_oc-0.0.1-SNAPSHOT.jar /var/www/app
-sudo chmod 755 /var/www/app/zachet_admin_oc-0.0.1-SNAPSHOT.jar
-sudo nano /etc/systemd/system/simple-api-service.service
+sudo cp target//ZachetAdminka-0.0.1-SNAPSHOT.jar /var/www/app
+sudo chmod 755 /var/www/app//ZachetAdminka-0.0.1-SNAPSHOT.jar
+sudo nano /etc/systemd/system/java-api-service.service
 
 _________________________________________________________________
 [Unit]
-Description=Java_API_Service
+Description=Java API Service
 After=network.target
 
 [Service]
-User=dbukin
-ExecStart=/usr/bin/java -jar /var/www/app/zachet_admin_oc-0.0.1-SNAPSHOT.jar
+User=rutuser
+ExecStart=/usr/bin/java -jar /var/www/app/ZachetAdminka-0.0.1-SNAPSHOT.jar
 SuccessExitStatus=143
 Restart=always
 RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
+
+
+Выйти и сохранить 
+cntrl+O
+Enter
+cntrl+X
 __________________________________________________________________
 
 
@@ -54,20 +63,25 @@ server {
 }
 __________________________________________________________________
 
-sudo ln -s /etc/nginx/sites-available/java-api-service /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/java-api-service /etc/nginx/sites-enabled/java-api-service
 
 sudo systemctl restart nginx
 
 ip addr - для определения ip машины
 
 Пример просмотра запроса в http
-http://192.168.1.221/health
+http://192.168.50.140//health
 
 Пример запросов:
 
-GET http://192.168.1.221/health
+GET http://192.168.50.140/health
 
-GET http://192.168.1.221/users/get_all_users
+GET http://192.168.50.140/users/get_all_users
 
-GET http://192.168.1.221/products/get_all_products
+GET http://192.168.50.140/cars/get_all_cars
 
+
+Если будут проблемы с портом и он чем то занят 
+sudo ss -tuln | grep :80
+sudo lsof -i :80
+sudo systemctl stop apache2
