@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class HealthCheckController {
     @GetMapping
     public ResponseEntity<String> healthCheck() {
-        String message = "Через час вы будете смеяться по-иному. А те из вас, кто останется в живых, позавидуют мертвым!";
+        String message = "Я живая!!!!!";
         return ResponseEntity.ok(message);
     }
 

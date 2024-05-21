@@ -70,13 +70,13 @@ sudo systemctl restart nginx
 ip addr - для определения ip машины
 
 Пример просмотра запроса в http
-http://192.168.50.140//health
+http://192.168.50.140/health
 
 Пример запросов:
 
 GET http://192.168.50.140/health
 
-GET http://192.168.50.140/users/get_all_users
+GET http://192.168.50.140/buyers/get_all_buyers
 
 GET http://192.168.50.140/cars/get_all_cars
 
